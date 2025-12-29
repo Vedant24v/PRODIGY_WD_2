@@ -1,0 +1,104 @@
+:root {
+    --primary: #00ffcc;
+    --danger: #ff2e63;
+    --warning: #f9d423;
+    --bg: #080812;
+}
+
+body {
+    background: var(--bg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Background Animation */
+.bg-animate {
+    position: fixed;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, #1a1a3a 0%, #080812 70%);
+    z-index: -1;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate { 100% { transform: rotate(360deg); } }
+
+.main-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    width: 420px;
+    text-align: center;
+}
+
+.glow-text {
+    font-family: 'Orbitron';
+    letter-spacing: 5px;
+    color: var(--primary);
+    text-shadow: 0 0 15px var(--primary);
+}
+
+.dev-name { font-size: 14px; opacity: 0.6; margin-top: -10px; margin-bottom: 20px; }
+
+/* Timer Visuals */
+.timer-wrapper {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+.timer-display {
+    font-family: 'Orbitron';
+    font-size: 48px;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.ms-small { font-size: 28px; color: var(--primary); }
+
+/* Neon Buttons */
+.btn-neon {
+    border: none;
+    padding: 12px 20px;
+    margin: 8px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.green { background: var(--primary); box-shadow: 0 0 15px var(--primary); }
+.red { background: var(--danger); color: white; box-shadow: 0 0 15px var(--danger); }
+.blue { background: #00d2ff; box-shadow: 0 0 15px #00d2ff; }
+.yellow { background: var(--warning); box-shadow: 0 0 15px var(--warning); }
+
+.btn-neon:hover { transform: scale(1.1); filter: brightness(1.2); }
+
+/* Laps List */
+.laps-container { margin-top: 25px; text-align: left; }
+.laps {
+    max-height: 120px;
+    overflow-y: auto;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 10px;
+}
+
+.laps li {
+    background: rgba(255,255,255,0.05);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Orbitron';
+}
